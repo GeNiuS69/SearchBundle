@@ -1,0 +1,48 @@
+imports:
+    - { resource: parameters.yml }
+
+framework:
+    secret: %secret%
+    router: { resource: "%kernel.root_dir%/config/routing.yml" }
+    form: true
+    csrf_protection: false
+    validation: { enable_annotations: true }
+    templating: { engines: ['twig'] }
+    default_locale: %locale%
+    session: ~
+
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        path: "%kernel.root_dir%/../../.tmp/doctrine.db"
+        charset:  UTF8
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        auto_mapping: true
+        mappings:
+            Engage360dSearchTestBundle:
+                type: annotation
+                dir: %kernel.root_dir%/../Fixtures/Entity
+                prefix: Engage360d\Bundle\SearchTestBundle\Entity
+                is_bundle: false
+
+nelmio_api_doc: ~
+
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        website:
+            client: default
+            types:
+                test:
+                    mappings:
+                        text: ~
+                    persistence:
+                        driver: orm
+                        model: Engage360d\Bundle\SearchTestBundle\Entity\Test
+                        provider: ~
+                        listener:
+                            insert: true
+                            update: true
+                            delete: true

@@ -1,0 +1,65 @@
+{
+    "name": "engage360d/search-bundle",
+    "type": "symfony-bundle",
+    "description": "Engage360dSearchBundle",
+    "keywords": ["Engage", "360D"],
+    "homepage": "http://github.com/engage-360d",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vyacheslav Slinko",
+            "email": "vyacheslav.slinko@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-0": {
+            "Engage360d\\Bundle\\SearchBundle": ""
+        }
+    },
+
+    "minimum-stability": "dev",
+
+    "require": {
+        "symfony/symfony": "2.3.*",
+        "friendsofsymfony/elastica-bundle": "dev-master"
+    },
+
+    "require-dev": {
+        "symfony/monolog-bundle": "2.3.*",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "doctrine/doctrine-bundle": "1.2.*",
+        "doctrine/doctrine-fixtures-bundle": "2.2.*",
+        "sensio/distribution-bundle": "dev-master",
+        "nelmio/api-doc-bundle": "dev-master"
+    },
+
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Engage-360D/RestBundle.git"
+        }
+    ],
+
+    "target-dir": "Engage360d/Bundle/SearchBundle",
+
+    "extra": {
+        "symfony-app-dir": "Tests/app",
+        "symfony-web-dir": "Tests/app"
+    }
+}

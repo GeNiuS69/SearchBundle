@@ -1,0 +1,5 @@
+get_search:
+    path: /search
+    methods: [GET]
+    defaults:
+        _controller: Engage360dSearchBundle:Api\Search:getSearch

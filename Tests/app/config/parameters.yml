@@ -1,0 +1,3 @@
+parameters:
+    secret: ThisTokenIsNotSoSecretChangeIt
+    locale: ru
