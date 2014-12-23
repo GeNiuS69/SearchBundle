@@ -21,7 +21,7 @@
     "minimum-stability": "dev",
 
     "require": {
-        "symfony/symfony": "2.3.*",
+        "symfony/symfony": ">=2.3",
         "friendsofsymfony/elastica-bundle": "dev-master"
     },
 
