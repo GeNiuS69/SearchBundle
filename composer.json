@@ -22,7 +22,7 @@
 
     "require": {
         "symfony/symfony": ">=2.3",
-        "friendsofsymfony/elastica-bundle": "dev-master"
+        "friendsofsymfony/elastica-bundle": "3.2.*"
     },
 
     "require-dev": {
